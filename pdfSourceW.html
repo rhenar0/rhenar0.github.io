@@ -1,0 +1,471 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-bash.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-none.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-rego.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-yaml.min.js"></script><style>
+        .article {
+            position: relative;
+            padding-bottom: 24px;
+        }
+        
+
+        .bordered-element {
+            border: 1px solid #c4c4c4;
+            overflow: hidden;
+        }
+        
+
+        .bordered-element-rounded {
+            border: 1px solid #c4c4c4;
+            border-radius: 7px;
+            overflow: hidden;
+        }
+        
+
+        .code-block {
+            overflow: hidden;
+            position: relative;
+            padding: 0;
+            border-radius: 8px;
+            font-variant-ligatures: none;
+            background-color: rgba(25, 25, 28, .05);
+            word-break: break-all;
+        }
+        
+
+        .def {
+            padding: 16px;
+            background: #e6e6e6;
+        }
+        
+
+        .definition-list-description {
+            margin-top: 12px;
+            margin-left: 2px;
+        }
+        
+
+        .definition-list-title {
+            font-size: 17px;
+            font-weight: 560;
+            line-height: 24px;
+            color: #19191c;
+            overflow-wrap: break-word;
+        }
+        
+
+        .detached {
+            margin-block-start: 0;
+            margin-block-end: 0;
+            margin-bottom: 8px;
+        }
+        
+
+        .flex {
+            display: flex;
+        }
+        
+
+        .header-row {
+            background: #e6e6e6;
+        }
+        
+
+        .inline-code {
+            border-radius: 4px;
+            display: inline;
+            padding: 2px 1px;
+            font-family: JetBrains Sans,monospace;
+            background: #e6e6e6;
+        }
+        
+
+        .keystroke {
+            position: relative;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            min-width: 22px;
+            height: 22px;
+            margin: 0 1px 2px;
+            padding: 3px;
+            border: 1px solid rgba(25, 25, 28, .2);
+            border-radius: 4px;
+            white-space: nowrap;
+            background: rgba(25, 25, 28, .05);
+            font-family: inherit;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1em;
+            transition: border-color .5s;
+        }
+        
+
+        .keystroke-after:not(:last-child):after {
+            content: '+';
+            font-size: 10px;
+        }
+        
+
+        .list {
+            list-style-type: disc;
+            padding-left: 0;
+            margin-left: 15px;
+        }
+        
+
+        .list-item {
+            margin-top: 6px;
+            margin-bottom: 6px;
+            margin-left: 4px;
+        }
+        
+
+        .main-title {
+            padding-bottom: 24px;
+            margin-top: 0;
+            font-size: 40px;
+            margin-block-start: 0;
+            margin-block-end: 0;
+        }
+        
+
+        .note {
+            background: rgba(77, 187, 95, .2);
+        }
+        
+
+        .prism {
+            page-break-inside: avoid;
+        }
+        
+        /* PrismJS 1.29.0
+https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript+abap+abnf+actionscript+ada+agda+al+antlr4+apacheconf+apex+apl+applescript+aql+arduino+arff+armasm+arturo+asciidoc+aspnet+asm6502+asmatmel+autohotkey+autoit+avisynth+avro-idl+awk+bash+basic+batch+bbcode+bbj+bicep+birb+bison+bnf+bqn+brainfuck+brightscript+bro+bsl+c+csharp+cpp+cfscript+chaiscript+cil+cilkc+cilkcpp+clojure+cmake+cobol+coffeescript+concurnas+csp+cooklang+coq+crystal+css-extras+csv+cue+cypher+d+dart+dataweave+dax+dhall+diff+django+dns-zone-file+docker+dot+ebnf+editorconfig+eiffel+ejs+elixir+elm+etlua+erb+erlang+excel-formula+fsharp+factor+false+firestore-security-rules+flow+fortran+ftl+gml+gap+gcode+gdscript+gedcom+gettext+gherkin+git+glsl+gn+linker-script+go+go-module+gradle+graphql+groovy+haml+handlebars+haskell+haxe+hcl+hlsl+hoon+http+hpkp+hsts+ichigojam+icon+icu-message-format+idris+ignore+inform7+ini+io+j+java+javadoc+javadoclike+javastacktrace+jexl+jolie+jq+jsdoc+js-extras+json+json5+jsonp+jsstacktrace+js-templates+julia+keepalived+keyman+kotlin+kumir+kusto+latex+latte+less+lilypond+liquid+lisp+livescript+llvm+log+lolcode+lua+magma+makefile+markdown+markup-templating+mata+matlab+maxscript+mel+mermaid+metafont+mizar+mongodb+monkey+moonscript+n1ql+n4js+nand2tetris-hdl+naniscript+nasm+neon+nevod+nginx+nim+nix+nsis+objectivec+ocaml+odin+opencl+openqasm+oz+parigp+parser+pascal+pascaligo+psl+pcaxis+peoplecode+perl+php+phpdoc+php-extras+plant-uml+plsql+powerquery+powershell+processing+prolog+promql+properties+protobuf+pug+puppet+pure+purebasic+purescript+python+qsharp+q+qml+qore+r+racket+cshtml+jsx+tsx+reason+regex+rego+renpy+rescript+rest+rip+roboconf+robotframework+ruby+rust+sas+sass+scss+scala+scheme+shell-session+smali+smalltalk+smarty+sml+solidity+solution-file+soy+sparql+splunk-spl+sqf+sql+squirrel+stan+stata+iecst+stylus+supercollider+swift+systemd+t4-templating+t4-cs+t4-vb+tap+tcl+tt2+textile+toml+tremor+turtle+twig+typescript+typoscript+unrealscript+uorazor+uri+v+vala+vbnet+velocity+verilog+vhdl+vim+visual-basic+warpscript+wasm+web-idl+wgsl+wiki+wolfram+wren+xeora+xml-doc+xojo+xquery+yaml+yang+zig&plugins=highlight-keywords */
+code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shadow:0 1px #fff;font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;font-size:1em;text-align:left;white-space:pre-wrap;word-spacing:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,pre[class*=language-]::-moz-selection{text-shadow:none;background:#b3d4fc}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection,pre[class*=language-]::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:16px;margin:0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#f5f2f0}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#999}.token.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#690}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url{color:#9a6e3a;background:hsla(0,0%,100%,.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.class-name,.token.function{color:#dd4a68}.token.important,.token.regex,.token.variable{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}
+
+        
+
+        .prompt {
+            flex-direction: row;
+            letter-spacing: .0015em;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            margin-left: 0;
+            margin-right: 0;
+        }
+        
+
+        .prompt-content {
+            padding: 15px;
+            overflow: hidden;
+            flex: 1 1 auto;
+        }
+        
+
+        .prompt-content-p p {
+            margin-block-start: 0;
+            margin-block-end: 0;
+        }
+        
+
+        .prompt-icon {
+            flex: 0 0 auto;
+            margin-left: 15px;
+            margin-top: 15px;
+            fill: currentcolor;
+            width: 24px;
+            height: 24px;
+        }
+        
+
+        :root {
+            width: 95%;
+            max-width: 95vw;
+            padding: 0 0 0 30px;
+        }
+        
+        body {
+            font-family: JetBrains Sans,serif;
+        }
+        
+        a {
+            overflow-wrap: anywhere;
+            width: 100vw;
+        }
+        
+        
+        @font-face {
+            font-family: JetBrains Sans;
+            src: url(https://resources.jetbrains.com/storage/jetbrains-sans/JetBrainsSans-Light.woff2) format("woff2"), url(https://resources.jetbrains.com/storage/jetbrains-sans/JetBrainsSans-Light.woff) format("woff");
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: JetBrains Sans;
+            src: url(https://resources.jetbrains.com/storage/jetbrains-sans/JetBrainsSans-Regular.woff2) format("woff2"), url(https://resources.jetbrains.com/storage/jetbrains-sans/JetBrainsSans-Regular.woff) format("woff");
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: JetBrains Sans;
+            src: url(https://resources.jetbrains.com/storage/jetbrains-sans/JetBrainsSans-SemiBold.woff2) format("woff2"), url(https://resources.jetbrains.com/storage/jetbrains-sans/JetBrainsSans-SemiBold.woff) format("woff");
+            font-weight: 600;
+            font-style: normal;
+        }
+        
+        
+        code {
+            display: inline;
+            word-break: break-word;
+            font-size: 15px;
+            line-height: inherit;
+            font-variant-ligatures: none;
+            font-family: JetBrains Sans,monospace;
+            white-space: pre-line;
+            overflow-wrap: break-word;
+        }
+        
+        figcaption {
+            margin-top: 5px;
+        }
+        
+        h2 {
+            padding-top: 16px;
+            padding-bottom: 8px;
+            margin-block-start: 0;
+            margin-block-end: 0;
+        }
+        
+        h3 {
+            padding-top: 8px;
+            padding-bottom: 8px;
+            margin-block-start: 0;
+            margin-block-end: 0;
+        }
+        
+        h4 {
+            padding-top: 4px;
+            padding-bottom: 8px;
+            margin-block-start: 0;
+            margin-block-end: 0;
+        }
+        
+        p {
+            padding: 0;
+            border: 0;
+            line-height: 25px;
+            margin-block-start: 0;
+            margin-block-end: 0;
+            padding-bottom: 8px;
+        }
+        
+        div {
+            display: block;
+        }
+        
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            page-break-inside: avoid;
+        }
+        
+        th, td {
+            border: 1px solid #c4c4c4;
+            padding: 10px;
+            text-align: left;
+            word-break: break-all;
+        }
+        
+        .no-bold {
+            font-weight: normal; 
+        }
+        
+        .entry {
+            display: grid;
+            grid-template-columns: auto max-content;
+            grid-template-areas: "chapter page";
+            align-items: end;
+            gap: 0 .25rem;
+            line-height: 25px;
+        }
+        
+        .toc-link-container{
+            grid-area: chapter;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .toc-link{
+            text-decoration: none;
+            color: black;
+        }
+        
+        .toc-link-container::after {
+            position: absolute;
+            padding-left: .25ch;
+            content: " . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . "
+            ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . "
+            ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ";
+            text-align: right;
+        }
+        
+        .page {
+            grid-area: page;
+            width: 30px;
+            text-align: right;
+        }
+        
+
+        .table-wrapper {
+            overflow: hidden;
+            box-sizing: border-box;
+            font: inherit;
+        }
+        
+
+        .tldr {
+            display: inline-flex;
+            flex-flow: column nowrap;
+            justify-content: flex-start;
+            align-items: flex-start;
+            width: 100%;
+            max-width: 100vw;
+            padding: 16px;
+            border: 1px solid #d1d1d2;
+            border-radius: 6px
+        }
+        
+        .tldr p {
+            margin: 0;
+            padding-bottom: 0;
+        }
+        
+
+        .topic {
+            page-break-before: always;
+        }
+        </style><title>pdfSourceW</title></head><body><div><section class="topic"><div><article class="article"><h1 class="main-title">Table of Contents</h1><div class="entry"><div class="toc-link-container"><a class="toc-link" href="#-1177616940">Acceuil</a></div><div class="page">2</div></div><div class="entry"><div class="toc-link-container"><a class="toc-link" href="#-134819004">S&eacute;curiser Kubernetes avec OPA Gatekeeper</a></div><div class="page">3</div></div></article></div></section><section class="topic"><div><article class="article"><h1 class="main-title" id="-1177616940">Acceuil</h1><section class="detached"><h2 id="-1177616940#introduction" data-toc="introduction#acceuil.md-introduction">Introduction</h2><p id="-1177616940#zcsels_4">Ceci est l'acceuil pour le WriteUp &eacute;ffectu&eacute; dans le cadre du cours S&eacute;curit&eacute; Cloud.  Le WriteUp est pr&eacute;sent dans le menu d&eacute;roulant sur la gauche.  Celui-ci &eacute;voquera la s&eacute;curation de Kubernetes dans un environnement cloud AWS gr&acirc;ce &agrave; l'usage d'OPA Gatekeeper et du language Rego.  Le WriteUp est pens&eacute; comme une forme de tutoriel explicatif des grands concepts et de la mise en production.</p></section></article></div></section><section class="topic"><div><article class="article"><h1 class="main-title" id="-134819004">S&eacute;curiser Kubernetes avec OPA Gatekeeper</h1><section class="detached"><h2 id="-134819004#contexte" data-toc="contexte#Secure-Kubernetes-using-OPA-Gatekeeper.md-contexte">Contexte</h2><p id="-134819004#h6a3s2_10">Votre entreprise a &eacute;t&eacute; engag&eacute;e par SuperTech, qui a r&eacute;cemment rencontr&eacute; des probl&egrave;mes de s&eacute;curit&eacute; avec ses clusters Kubernetes.  L'organisation a eu des difficult&eacute;s avec des d&eacute;ploiements mal configur&eacute;s et des param&egrave;tres de ressources non conformes, ce qui a entra&icirc;n&eacute; plusieurs incidents de s&eacute;curit&eacute;.  Pour r&eacute;soudre ces probl&egrave;mes, vous &ecirc;tes charg&eacute; d'aider &agrave; mettre en &oelig;uvre une solution robuste d'application des politiques &agrave; l'aide d'OPA Gatekeeper afin de garantir les points suivants :</p><dl id="-134819004#h6a3s2_11" date-style="title-top"><div class="def bordered-element detached"><dt id="-134819004#h6a3s2_15" class="definition-list-title">Syst&egrave;me de fichiers en lecture seule</dt><dd class="definition-list-description"><p id="-134819004#h6a3s2_20">S'assurer que tous les pods utilisent un syst&egrave;me de fichiers en lecture seule pour emp&ecirc;cher les modifications non autoris&eacute;es.</p></dd></div><div class="def bordered-element detached"><dt id="-134819004#h6a3s2_16" class="definition-list-title">Escalade de privil&egrave;ges</dt><dd class="definition-list-description"><p id="-134819004#h6a3s2_23">Bloquer les pods o&ugrave; l'option <span class="inline-code" id="-134819004#h6a3s2_25">AllowPrivilegeEscalation</span> dans le contexte de s&eacute;curit&eacute; est d&eacute;finie sur <span class="inline-code" id="-134819004#h6a3s2_26">true</span>, ce qui pourrait permettre aux processus d'acqu&eacute;rir des privil&egrave;ges suppl&eacute;mentaires.</p></dd></div><div class="def bordered-element detached"><dt id="-134819004#h6a3s2_17" class="definition-list-title">Utilisation du r&eacute;seau de l'h&ocirc;te</dt><dd class="definition-list-description"><p id="-134819004#h6a3s2_28">Interdire l'utilisation de <span class="inline-code" id="-134819004#h6a3s2_30">hostNetwork: true</span> dans les sp&eacute;cifications des pods pour &eacute;viter d'exposer directement le pod au r&eacute;seau de l'h&ocirc;te, r&eacute;duisant ainsi le risque d'attaques au niveau r&eacute;seau.</p></dd></div><div class="def bordered-element detached"><dt id="-134819004#h6a3s2_18" class="definition-list-title">Restriction des volumes HostPath</dt><dd class="definition-list-description"><p id="-134819004#h6a3s2_32">Restreindre l'utilisation des volumes <span class="inline-code" id="-134819004#h6a3s2_34">hostPath</span> sur un pod Kubernetes.</p></dd></div></dl></section><section class="detached"><h2 id="-134819004#technologie" data-toc="technologie#Secure-Kubernetes-using-OPA-Gatekeeper.md-technologie">Technologie</h2><section class="detached"><h3 id="-134819004#kubernetes-ou-k8s" data-toc="kubernetes-ou-k8s#Secure-Kubernetes-using-OPA-Gatekeeper.md-kubernetes-ou-k8s">Kubernetes (ou K8s)</h3><p id="-134819004#h6a3s2_37">Kubernetes (souvent abr&eacute;g&eacute; en K8s) est une plateforme open source d'orchestration de conteneurs.  Elle automatise le d&eacute;ploiement, la mise &agrave; l'&eacute;chelle, la gestion et l'exploitation des applications conteneuris&eacute;es.  Tout ceci permet donc de g&eacute;rer des clusters de machines physiques ou virtuelles, assure une haute disponibilit&eacute; des applications et simplifie leur maintenance gr&acirc;ce &agrave; des concepts tels que les pods, les services et les d&eacute;ploiements.</p></section><section class="detached"><h3 id="-134819004#opa" data-toc="opa#Secure-Kubernetes-using-OPA-Gatekeeper.md-opa">OPA</h3><p id="-134819004#h6a3s2_41">OPA (Open Policy Agent) est un moteur de r&egrave;gles g&eacute;n&eacute;raliste qui utilise le langage Rego pour d&eacute;finir et appliquer des politiques dans divers syst&egrave;mes tels que les microservices ou les pipelines CI/CD.  OPA Gatekeeper, quant &agrave; lui, est une extension sp&eacute;cifique &agrave; Kubernetes d&rsquo;OPA, fournissant une application des politiques et un contr&ocirc;le pour les clusters Kubernetes.  Bien qu&rsquo;OPA puisse &ecirc;tre int&eacute;gr&eacute; dans divers environnements, Gatekeeper est sp&eacute;cifiquement con&ccedil;u pour g&eacute;rer les ressources Kubernetes en utilisant des mod&egrave;les de contraintes et des contraintes pour appliquer des politiques directement dans l&rsquo;&eacute;cosyst&egrave;me K8s.</p><section class="detached"><h4 id="-134819004#opa-gatekeeper" data-toc="opa-gatekeeper#Secure-Kubernetes-using-OPA-Gatekeeper.md-opa-gatekeeper">OPA Gatekeeper</h4><p id="-134819004#h6a3s2_46">OPA Gatekeeper fonctionne comme un contr&ocirc;leur d'admission dans Kubernetes :</p><dl id="-134819004#h6a3s2_47" date-style="title-top"><div class="def bordered-element detached"><dt id="-134819004#h6a3s2_48" class="definition-list-title">D&eacute;finition des politiques</dt><dd class="definition-list-description"><p id="-134819004#h6a3s2_54">Les politiques sont &eacute;crites en Rego et sp&eacute;cifient les r&egrave;gles auxquelles les ressources doivent se conformer.</p></dd></div><div class="def bordered-element detached"><dt id="-134819004#h6a3s2_49" class="definition-list-title">Mod&egrave;les de contraintes</dt><dd class="definition-list-description"><p id="-134819004#h6a3s2_57">Mod&egrave;les qui d&eacute;finissent le sch&eacute;ma des contraintes. Les contraintes pr&eacute;cisent quelles politiques appliquer et &agrave; quelles ressources.</p></dd></div><div class="def bordered-element detached"><dt id="-134819004#h6a3s2_50" class="definition-list-title">Contraintes</dt><dd class="definition-list-description"><p id="-134819004#h6a3s2_60">Instances des mod&egrave;les de contraintes qui appliquent des politiques sp&eacute;cifiques.</p></dd></div><div class="def bordered-element detached"><dt id="-134819004#h6a3s2_51" class="definition-list-title">Contr&ocirc;leur d'admission</dt><dd class="definition-list-description"><p id="-134819004#h6a3s2_63">Intercepte les requ&ecirc;tes envoy&eacute;es au serveur API Kubernetes et les &eacute;value par rapport aux contraintes d&eacute;finies.</p></dd></div><div class="def bordered-element detached"><dt id="-134819004#h6a3s2_52" class="definition-list-title">Audit</dt><dd class="definition-list-description"><p id="-134819004#h6a3s2_66">V&eacute;rifie p&eacute;riodiquement les ressources existantes pour s'assurer qu'elles sont conformes aux contraintes d&eacute;finies.</p></dd></div></dl></section></section></section><section class="detached"><h2 id="-134819004#introduction-sur-rego" data-toc="introduction-sur-rego#Secure-Kubernetes-using-OPA-Gatekeeper.md-introduction-sur-rego">Introduction sur Rego</h2><p id="-134819004#h6a3s2_68">Rego est le langage de requ&ecirc;te utilis&eacute; par Open Policy Agent (OPA) pour d&eacute;finir et appliquer des politiques. Il est con&ccedil;u pour &ecirc;tre d&eacute;claratif, ce qui signifie qu'il faut d&eacute;crire ce qui doit &ecirc;tre fait plut&ocirc;t que comment le faire. Rego permet d'&eacute;crire des r&egrave;gles logiques qui s'ex&eacute;cutent sur des donn&eacute;es JSON.</p><section class="detached"><h3 id="-134819004#exemple-rego" data-toc="exemple-rego#Secure-Kubernetes-using-OPA-Gatekeeper.md-exemple-rego">Exemple Rego</h3><div class="detached code-block" id="-134819004#h6a3s2_70"><pre><code class="language-rego">package example.policy
+
+# La règle 'deny' renvoie un message si une condition est violée
+deny[msg] {
+    input.kind == &quot;Pod&quot;
+    input.spec.containers[_].securityContext.readOnlyRootFilesystem == false
+    msg = &quot;Les pods doivent utiliser un système de fichiers en lecture seule.&quot;
+}</code></pre></div><dl id="-134819004#h6a3s2_71" date-style="title-top"><div class="def bordered-element detached"><dt id="-134819004#h6a3s2_73" class="definition-list-title">package example.policy</dt><dd class="definition-list-description"><p id="-134819004#h6a3s2_78">D&eacute;finit le package dans lequel cette r&egrave;gle est incluse. Cela permet d'organiser les politiques.</p></dd></div><div class="def bordered-element detached"><dt id="-134819004#h6a3s2_74" class="definition-list-title">deny[msg]</dt><dd class="definition-list-description"><p id="-134819004#h6a3s2_81">La r&egrave;gle <span class="inline-code" id="-134819004#h6a3s2_83">deny</span> s&rsquo;ex&eacute;cute si toutes les conditions d&eacute;finies dans le bloc sont vraies. Si la r&egrave;gle est d&eacute;clench&eacute;e, elle renvoie un message d&rsquo;erreur.</p></dd></div><div class="def bordered-element detached"><dt id="-134819004#h6a3s2_75" class="definition-list-title">input.kind == &quot;Pod&quot;</dt><dd class="definition-list-description"><p id="-134819004#h6a3s2_85">V&eacute;rifie que l&rsquo;objet envoy&eacute; en entr&eacute;e est un pod Kubernetes.</p></dd></div><div class="def bordered-element detached"><dt id="-134819004#h6a3s2_76" class="definition-list-title">input.spec.containers[_].securityContext.readOnlyRootFilesystem == false</dt><dd class="definition-list-description"><p id="-134819004#h6a3s2_88">Parcourt tous les conteneurs sp&eacute;cifi&eacute;s dans le pod (containers[_]) et v&eacute;rifie si l&rsquo;attribut readOnlyRootFilesystem dans le contexte de s&eacute;curit&eacute; est d&eacute;fini sur <span class="inline-code" id="-134819004#h6a3s2_90">false</span>.</p></dd></div></dl><p id="-134819004#h6a3s2_72">Si les conditions sont satisfaites (par exemple, un conteneur ne respecte pas la configuration), un message est renvoy&eacute; pour expliquer le probl&egrave;me : &quot;Les pods doivent utiliser un syst&egrave;me de fichiers en lecture seule.&quot;</p></section></section><section class="detached"><h2 id="-134819004#introduction-sur-k8s-en-yaml" data-toc="introduction-sur-k8s-en-yaml#Secure-Kubernetes-using-OPA-Gatekeeper.md-introduction-sur-k8s-en-yaml">Introduction sur K8s (en yaml)</h2><p id="-134819004#h6a3s2_91">Les fichiers YAML sont utilis&eacute;s pour d&eacute;finir l'&eacute;tat souhait&eacute; d'objets dans un cluster. Ces fichiers permettent de sp&eacute;cifier les configurations n&eacute;cessaires pour cr&eacute;er et g&eacute;rer divers objets Kubernetes tels que pods, services, d&eacute;ploiements, etc. Dans le contexte d'OPA Gatekeeper, un fichier YAML est utilis&eacute; pour d&eacute;finir des mod&egrave;les de contraintes (ConstraintTemplate) et des contraintes (Constraint).</p><section class="detached"><h3 id="-134819004#exemple-k8s" data-toc="exemple-k8s#Secure-Kubernetes-using-OPA-Gatekeeper.md-exemple-k8s">Exemple K8s</h3><div class="detached code-block" id="-134819004#h6a3s2_93"><pre><code class="language-yaml">apiVersion: templates.gatekeeper.sh/v1beta1
+kind: ConstraintTemplate
+metadata:
+  name: UNIQUE_CONSTRAINT_Template_NAME
+spec:
+  crd:
+    spec:
+      names:
+        kind: sample
+  targets:
+    - target: admission.k8s.gatekeeper.sh
+      rego: |</code></pre></div><dl id="-134819004#h6a3s2_94" date-style="title-top"><div class="def bordered-element detached"><dt id="-134819004#h6a3s2_95" class="definition-list-title">apiVersion: templates.gatekeeper.sh/v1beta1</dt><dd class="definition-list-description"><p id="-134819004#h6a3s2_102">Sp&eacute;cifie la version de l'API utilis&eacute;e pour d&eacute;finir l'objet. Ici, l'API templates.gatekeeper.sh/v1beta1 est sp&eacute;cifique aux mod&egrave;les de contraintes (ConstraintTemplate) dans OPA Gatekeeper.</p></dd></div><div class="def bordered-element detached"><dt id="-134819004#h6a3s2_96" class="definition-list-title">kind: ConstraintTemplate</dt><dd class="definition-list-description"><p id="-134819004#h6a3s2_105">D&eacute;finit le type d'objet Kubernetes. ConstraintTemplate est un mod&egrave;le qui sert de base pour cr&eacute;er des contraintes personnalis&eacute;es dans Gatekeeper.</p></dd></div><div class="def bordered-element detached"><dt id="-134819004#h6a3s2_97" class="definition-list-title">metadata</dt><dd class="definition-list-description"><p id="-134819004#h6a3s2_108">Contient des informations standard sur l'objet, telles que :</p><ul class="list" id="-134819004#h6a3s2_109" start="1"><li class="list-item" id="-134819004#h6a3s2_111"><p>name : Nom unique de la ressource. Ce nom est utilis&eacute; pour r&eacute;f&eacute;rencer le mod&egrave;le dans d'autres ressources, comme les contraintes.</p></li></ul></dd></div><div class="def bordered-element detached"><dt id="-134819004#h6a3s2_98" class="definition-list-title">spec</dt><dd class="definition-list-description"><p id="-134819004#h6a3s2_113">D&eacute;finit les sp&eacute;cifications de la ressource. Pour un ConstraintTemplate, cela inclut deux parties principales :</p></dd></div><div class="def bordered-element detached"><dt id="-134819004#h6a3s2_99" class="definition-list-title">crd</dt><dd class="definition-list-description"><p id="-134819004#h6a3s2_116">Permet &agrave; Kubernetes de reconna&icirc;tre et g&eacute;rer les contraintes d&eacute;finies par le mod&egrave;le.</p><ul class="list" id="-134819004#h6a3s2_117" start="1"><li class="list-item" id="-134819004#h6a3s2_119"><p><span class="inline-code" id="-134819004#h6a3s2_120">spec.names.kind: sample</span>: D&eacute;finit le type de contrainte que ce mod&egrave;le prendra en charge. Par exemple, le type personnalis&eacute; ici est appel&eacute; sample.</p></li></ul></dd></div><div class="def bordered-element detached"><dt id="-134819004#h6a3s2_100" class="definition-list-title">targets</dt><dd class="definition-list-description"><p id="-134819004#h6a3s2_122">Sp&eacute;cifie la cible pour l&rsquo;application de la politique.</p><ul class="list" id="-134819004#h6a3s2_123" start="1"><li class="list-item" id="-134819004#h6a3s2_125"><p><span class="inline-code" id="-134819004#h6a3s2_127">target: admission.k8s.gatekeeper.sh</span>: Indique que cette politique s'applique aux requ&ecirc;tes intercept&eacute;es par le contr&ocirc;leur d'admission de Kubernetes.</p></li><li class="list-item" id="-134819004#h6a3s2_126"><p><span class="inline-code" id="-134819004#h6a3s2_128">rego</span>: Contient le code Rego qui d&eacute;finit la logique de la contrainte. Le contenu de ce bloc sera la r&egrave;gle &eacute;crite en langage Rego pour &eacute;valuer les ressources Kubernetes.</p></li></ul></dd></div></dl></section></section><section class="detached"><h2 id="-134819004#application-d-une-r-gle-rego-sur-un-yaml-k8s" data-toc="application-d-une-r-gle-rego-sur-un-yaml-k8s#Secure-Kubernetes-using-OPA-Gatekeeper.md-application-d-une-r-gle-rego-sur-un-yaml-k8s">Application d'une r&egrave;gle Rego sur un YAML K8s</h2><p id="-134819004#h6a3s2_129">Dans l'exemple propos&eacute;, la contrainte Rego v&eacute;rifie que les pods n'utilisent pas le champ <span class="inline-code" id="-134819004#h6a3s2_133">hostNetwork: true</span>, une configuration capable d'exposer des pods directement au r&eacute;seau de la machine h&ocirc;te.</p><section class="detached"><h3 id="-134819004#contrainttemplate" data-toc="contrainttemplate#Secure-Kubernetes-using-OPA-Gatekeeper.md-contrainttemplate">ContraintTemplate</h3><p id="-134819004#h6a3s2_134">Cr&eacute;ation du mod&egrave;le de contrainte.</p><div class="detached code-block" id="-134819004#h6a3s2_135"><pre><code class="language-yaml">apiVersion: templates.gatekeeper.sh/v1beta1
+kind: ConstraintTemplate
+metadata:
+  name: k8shostnetworkdisallowed
+spec:
+  crd:
+    spec:
+      names:
+        kind: K8sHostNetworkDisallowed
+  targets:
+    - target: admission.k8s.gatekeeper.sh
+      rego: |
+        package k8shostnetworkdisallowed
+
+        # Détecte les violations lorsque hostNetwork est défini sur true
+        violation[{&quot;msg&quot;: msg}] {
+          input.review.object.spec.hostNetwork == true
+          msg := &quot;The use of hostNetwork: true is not allowed for security reasons.&quot;
+        }</code></pre></div><dl id="-134819004#h6a3s2_136" date-style="title-top"><div class="def bordered-element detached"><dt id="-134819004#h6a3s2_137" class="definition-list-title">metadata</dt><dd class="definition-list-description"><p><b id="-134819004#h6a3s2_141">name: k8shostnetworkdisallowed</b></p><ul class="list" id="-134819004#h6a3s2_142" start="1"><li class="list-item" id="-134819004#h6a3s2_143"><p>Nom unique pour le mod&egrave;le de contrainte. Il identifie clairement la politique appliqu&eacute;e (ici, interdire hostNetwork: true).</p></li><li class="list-item" id="-134819004#h6a3s2_144"><p>D&eacute;finit la version de l'API utilis&eacute;e pour cr&eacute;er cette contrainte.</p></li></ul></dd></div><div class="def bordered-element detached"><dt id="-134819004#h6a3s2_138" class="definition-list-title">spec.crd.spec.names.kind</dt><dd class="definition-list-description"><p><b id="-134819004#h6a3s2_145">kind: K8sHostNetworkDisallowed</b></p><ul class="list" id="-134819004#h6a3s2_146" start="1"><li class="list-item" id="-134819004#h6a3s2_147"><p>Nom du type de contrainte qui sera d&eacute;fini. Les utilisateurs de Gatekeeper utiliseront ce nom pour cr&eacute;er des contraintes sp&eacute;cifiques bas&eacute;es sur ce mod&egrave;le.</p></li></ul></dd></div><div class="def bordered-element detached"><dt id="-134819004#h6a3s2_139" class="definition-list-title">targets</dt><dd class="definition-list-description"><p><b id="-134819004#h6a3s2_148">target: admission.k8s.gatekeeper.sh</b></p><ul class="list" id="-134819004#h6a3s2_149" start="1"><li class="list-item" id="-134819004#h6a3s2_150"><p>Sp&eacute;cifie que cette politique s'applique au contr&ocirc;leur d'admission Kubernetes interceptant les requ&ecirc;tes API.</p></li></ul></dd></div><div class="def bordered-element detached"><dt id="-134819004#h6a3s2_140" class="definition-list-title">rego</dt><dd class="definition-list-description"><p><b id="-134819004#h6a3s2_151">La logique</b></p><ul class="list" id="-134819004#h6a3s2_152" start="1"><li class="list-item" id="-134819004#h6a3s2_153"><p>violation[{&quot;msg&quot;: msg}] </p><ul class="list" id="-134819004#h6a3s2_156" start="1"><li class="list-item" id="-134819004#h6a3s2_157"><p>D&eacute;finit la r&egrave;gle qui d&eacute;tecte les violations. Si une violation est trouv&eacute;e, un message explicatif est renvoy&eacute;.</p></li></ul></li><li class="list-item" id="-134819004#h6a3s2_154"><p>Condition : input.review.object.spec.hostNetwork == true </p><ul class="list" id="-134819004#h6a3s2_158" start="1"><li class="list-item" id="-134819004#h6a3s2_159"><p>V&eacute;rifie si le champ hostNetwork de la sp&eacute;cification du pod est d&eacute;fini sur true.</p></li></ul></li><li class="list-item" id="-134819004#h6a3s2_155"><p>Message : msg := &quot;The use of hostNetwork: true is not allowed for security reasons.&quot; </p><ul class="list" id="-134819004#h6a3s2_160" start="1"><li class="list-item" id="-134819004#h6a3s2_161"><p>Si une violation est d&eacute;tect&eacute;e, ce message est retourn&eacute; pour expliquer pourquoi la requ&ecirc;te est bloqu&eacute;e.</p></li></ul></li></ul></dd></div></dl></section><section class="detached"><h3 id="-134819004#exemple_a" data-toc="exemple_a#Secure-Kubernetes-using-OPA-Gatekeeper.md-exemple_a">Constraint</h3><p id="-134819004#h6a3s2_162">La Constraint applique le mod&egrave;le d&eacute;fini dans le ContraintTemplate &agrave; des ressources sp&eacute;cifiques.</p><div class="detached code-block" id="-134819004#h6a3s2_163"><pre><code class="language-yaml">apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sHostNetworkDisallowed
+metadata:
+  name: restrict-hostnetwork
+spec:
+  match:
+    kinds:
+      - apiGroups: [&quot;&quot;]
+        kinds: [&quot;Pod&quot;]
+    # Facultatif : Filtre par namespace
+    namespaces: [&quot;default&quot;, &quot;production&quot;]</code></pre></div><dl id="-134819004#h6a3s2_164" date-style="title-top"><div class="def bordered-element detached"><dt id="-134819004#h6a3s2_165" class="definition-list-title">apiversion</dt><dd class="definition-list-description"><p><b id="-134819004#h6a3s2_169">apiVersion: constraints.gatekeeper.sh/v1beta1</b></p><ul class="list" id="-134819004#h6a3s2_170" start="1"><li class="list-item" id="-134819004#h6a3s2_171"><p>D&eacute;finit la version de l'API utilis&eacute;e pour cr&eacute;er cette contrainte.</p></li><li class="list-item" id="-134819004#h6a3s2_172"><p>Le pr&eacute;fixe constraints.gatekeeper.sh est sp&eacute;cifique &agrave; Gatekeeper et permet d&rsquo;appliquer des r&egrave;gles de politique d&eacute;finies &agrave; l&rsquo;aide d&rsquo;un ConstraintTemplate.</p></li></ul></dd></div><div class="def bordered-element detached"><dt id="-134819004#h6a3s2_166" class="definition-list-title">kind</dt><dd class="definition-list-description"><p><b id="-134819004#h6a3s2_173">kind: K8sHostNetworkDisallowed</b></p><ul class="list" id="-134819004#h6a3s2_174" start="1"><li class="list-item" id="-134819004#h6a3s2_175"><p>Indique le type de contrainte.</p></li><li class="list-item" id="-134819004#h6a3s2_176"><p>Ce type doit correspondre &agrave; celui d&eacute;fini dans le ConstraintTemplate.</p></li><li class="list-item" id="-134819004#h6a3s2_177"><p>Ce lien garantit que cette contrainte applique les r&egrave;gles d&eacute;finies dans le mod&egrave;le associ&eacute;.</p></li></ul></dd></div><div class="def bordered-element detached"><dt id="-134819004#h6a3s2_167" class="definition-list-title">metadata</dt><dd class="definition-list-description"><p><b id="-134819004#h6a3s2_178">name: restrict-hostnetwork</b></p><ul class="list" id="-134819004#h6a3s2_179" start="1"><li class="list-item" id="-134819004#h6a3s2_180"><p>Nom unique pour identifier cette contrainte dans le cluster. Cela permet d'appliquer plusieurs contraintes bas&eacute;es sur le m&ecirc;me mod&egrave;le avec des noms diff&eacute;rents.</p></li></ul></dd></div><div class="def bordered-element detached"><dt id="-134819004#h6a3s2_168" class="definition-list-title">spec</dt><dd class="definition-list-description"><p><b id="-134819004#h6a3s2_181">spec.match.kinds</b></p><ul class="list" id="-134819004#h6a3s2_182" start="1"><li class="list-item" id="-134819004#h6a3s2_183"><p>apiGroups: [&quot;&quot;] </p><ul class="list" id="-134819004#h6a3s2_185" start="1"><li class="list-item" id="-134819004#h6a3s2_186"><p>Sp&eacute;cifie l&rsquo;API group&eacute;e par laquelle les ressources sont expos&eacute;es. Une valeur vide (&quot;&quot;) signifie que l&rsquo;API correspond au groupe de base (ressources standards comme Pod, Service, etc.).</p></li></ul></li><li class="list-item" id="-134819004#h6a3s2_184"><p>kinds: [&quot;Pod&quot;] </p><ul class="list" id="-134819004#h6a3s2_187" start="1"><li class="list-item" id="-134819004#h6a3s2_188"><p>Indique que cette contrainte s&rsquo;applique aux objets de type Pod.</p></li></ul></li></ul></dd></div></dl></section><section class="detached"><h3 id="-134819004#tester-la-contrainte" data-toc="tester-la-contrainte#Secure-Kubernetes-using-OPA-Gatekeeper.md-tester-la-contrainte">Tester la contrainte</h3><p id="-134819004#h6a3s2_189">Cr&eacute;ation d'un Pod avec <span class="inline-code" id="-134819004#h6a3s2_192">hostNetwork: true</span> pour v&eacute;rifier que la contrainte est appliqu&eacute;e.</p><div class="detached code-block" id="-134819004#h6a3s2_190"><pre><code class="language-yaml">apiVersion: v1
+kind: Pod
+metadata:
+  name: non-compliant-pod
+spec:
+  hostNetwork: true
+  containers:
+    - name: nginx
+      image: nginx</code></pre></div><section class="detached"><h4 id="-134819004#r-sultat" data-toc="r-sultat#Secure-Kubernetes-using-OPA-Gatekeeper.md-r-sultat">R&eacute;sultat</h4><div class="detached code-block" id="-134819004#h6a3s2_193"><pre><code class="language-bash">Error from server (Forbidden): admission webhook &quot;validation.gatekeeper.sh&quot; denied the request: 
+The use of hostNetwork: true is not allowed for security reasons.</code></pre></div></section></section></section><section class="detached"><h2 id="-134819004#application-sur-l-instance" data-toc="application-sur-l-instance#Secure-Kubernetes-using-OPA-Gatekeeper.md-application-sur-l-instance">Application sur l'instance</h2><p id="-134819004#h6a3s2_194">Pour respecter la consigne de mise en oeuvre nous proc&eacute;derons comme ceci en utilisant la documentation de K8s et ses capabilities.  Sur la machine h&ocirc;te du cluster K8s, il faudra cr&eacute;er les diff&eacute;rents fichiers <span class="inline-code" id="-134819004#h6a3s2_200">.yaml</span> et les positionner dans un dossier quelconque.  On pourra imaginer ceci :</p><div class="detached code-block" id="-134819004#h6a3s2_195"><pre><code class="language-none">---home
+   |
+   ---debian
+      |
+      ---k8s_yaml
+         |
+         ---Constraintz
+            |
+            ---spk8s
+               |
+               --CT_spk8s.yaml
+               --CA_spk8s.yaml</code></pre></div><section class="detached"><h3 id="-134819004#pr-sence-de-k8s-et-de-gatekeeper" data-toc="pr-sence-de-k8s-et-de-gatekeeper#Secure-Kubernetes-using-OPA-Gatekeeper.md-pr-sence-de-k8s-et-de-gatekeeper">Pr&eacute;sence de K8s et de Gatekeeper</h3><div class="tldr detached" id="-134819004#h6a3s2_203"><p><b id="-134819004#h6a3s2_206">Check</b></p><p id="-134819004#h6a3s2_207">Commande: <span class="" id="-134819004#h6a3s2_213"><span class="keystroke-after"><kbd class="keystroke">minikube</kbd></span><span class="keystroke-after"><kbd class="keystroke">start</kbd></span></span></p><p id="-134819004#h6a3s2_208">Commande: <span class="" id="-134819004#h6a3s2_214"><span class="keystroke-after"><kbd class="keystroke">kubectl</kbd></span><span class="keystroke-after"><kbd class="keystroke">get</kbd></span><span class="keystroke-after"><kbd class="keystroke">pods</kbd></span><span class="keystroke-after"><kbd class="keystroke">-n</kbd></span><span class="keystroke-after"><kbd class="keystroke">gatekeeper-system</kbd></span></span></p><p> <b id="-134819004#h6a3s2_209">Installation</b></p><p id="-134819004#h6a3s2_210">Commande: <span class="" id="-134819004#h6a3s2_215"><span class="keystroke-after"><kbd class="keystroke">curl</kbd></span><span class="keystroke-after"><kbd class="keystroke">-LO</kbd></span><span class="keystroke-after"><kbd class="keystroke">https://github.com/kubernetes/minikube/releases/latest/download/minikube-linux-amd64</kbd></span></span></p><p id="-134819004#h6a3s2_211">Commande: <span class="" id="-134819004#h6a3s2_216"><span class="keystroke-after"><kbd class="keystroke">sudo</kbd></span><span class="keystroke-after"><kbd class="keystroke">install</kbd></span><span class="keystroke-after"><kbd class="keystroke">minikube-linux-amd64</kbd></span><span class="keystroke-after"><kbd class="keystroke">/usr/local/bin/minikube</kbd></span><span class="keystroke-after"><kbd class="keystroke">&amp;&amp;</kbd></span><span class="keystroke-after"><kbd class="keystroke">rm</kbd></span><span class="keystroke-after"><kbd class="keystroke">minikube-linux-amd64</kbd></span></span></p><p id="-134819004#h6a3s2_212">Commande: <span class="" id="-134819004#h6a3s2_217"><span class="keystroke-after"><kbd class="keystroke">kubectl</kbd></span><span class="keystroke-after"><kbd class="keystroke">apply</kbd></span><span class="keystroke-after"><kbd class="keystroke">-f</kbd></span><span class="keystroke-after"><kbd class="keystroke">https://raw.githubusercontent.com/open-policy-agent/gatekeeper/v3.18.2/deploy/gatekeeper.yaml</kbd></span></span></p></div><p id="-134819004#h6a3s2_204">Pour s'assurer du bon d&eacute;roulement de l'explication, il faut d'abord v&eacute;rifier la pr&eacute;sence d'un K8s (dans ce cas l&agrave;, mis en place par <span class="inline-code" id="-134819004#h6a3s2_218">minikube</span>) et dans un autre, la pr&eacute;sence de <span class="inline-code" id="-134819004#h6a3s2_219">Gatekeeper</span>.  Vous pouvez installer K8s avec <span class="inline-code" id="-134819004#h6a3s2_230">minikube</span> (<a href="https://minikube.sigs.k8s.io/docs/start/?arch=/linux/x86-64/stable/binary+download">https://minikube.sigs.k8s.io/docs/start/?arch=/linux/x86-64/stable/binary+download</a>) en obtenant les binaires d'installation sur le site officiel.  Apr&egrave;s l'installation de <span class="inline-code" id="-134819004#h6a3s2_224">minikube</span>, et l'avoir d&eacute;marr&eacute;, il faut maintenant installer <span class="inline-code" id="-134819004#h6a3s2_231">Gatekeeper</span> (<a href="https://open-policy-agent.github.io/gatekeeper/website/docs/install/">https://open-policy-agent.github.io/gatekeeper/website/docs/install/</a>) en appliquant la configuration sur <span class="inline-code" id="-134819004#h6a3s2_226">K8s</span>.  Il faut ensuite v&eacute;rifier son installation et obtenir la m&ecirc;me sortie que celle-ci en executant : <span class="inline-code" id="-134819004#h6a3s2_229">kubectl get pods -n gatekeeper-system</span>.</p><div class="detached code-block" id="-134819004#h6a3s2_205"><pre><code class="language-bash">NAME                                             READY   STATUS    RESTARTS       AGE
+gatekeeper-audit-999899c4-4w2gg                  1/1     Running   2 (8m4s ago)   16h
+gatekeeper-controller-manager-68488c48c5-66nb5   1/1     Running   1 (8m4s ago)   16h
+gatekeeper-controller-manager-68488c48c5-kl9n5   1/1     Running   1 (8m4s ago)   16h
+gatekeeper-controller-manager-68488c48c5-m9lfg   1/1     Running   1 (8m4s ago)   16h</code></pre></div></section><section class="detached"><h3 id="-134819004#constrainttemplate-application" data-toc="constrainttemplate-application#Secure-Kubernetes-using-OPA-Gatekeeper.md-constrainttemplate-application">ConstraintTemplate Application</h3><div class="tldr detached" id="-134819004#h6a3s2_235"><p id="-134819004#h6a3s2_257">Commande: <span class="" id="-134819004#h6a3s2_258"><span class="keystroke-after"><kbd class="keystroke">kubectl</kbd></span><span class="keystroke-after"><kbd class="keystroke">apply</kbd></span><span class="keystroke-after"><kbd class="keystroke">-f</kbd></span><span class="keystroke-after"><kbd class="keystroke">CT_spk8s.yaml</kbd></span></span></p></div><p id="-134819004#h6a3s2_232">D&eacute;finition du fichier <span class="inline-code" id="-134819004#h6a3s2_236">CT_spk8s.yaml</span>.</p><div class="detached code-block" id="-134819004#h6a3s2_233"><pre><code class="language-yaml">apiVersion: templates.gatekeeper.sh/v1
+kind: ConstraintTemplate
+metadata:
+  name: spk8s
+spec:
+  crd:
+    spec:
+      names:
+        kind: SPK8s
+  targets:
+    - target: admission.k8s.gatekeeper.sh
+      rego: |
+        package spk8s
+
+        violation[{&quot;msg&quot;: msg}] {
+          input.review.object.spec.containers[_].securityContext.readOnlyRootFilesystem != true
+          msg := &quot;Le systeme de fichier n'est pas en lecture seulement.&quot;
+        }
+
+        violation[{&quot;msg&quot;: msg}] {
+          input.review.object.spec.containers[_].securityContext.allowPrivilegeEscalation == true
+          msg := &quot;Attention, l'escalation de privilege est actif.&quot;
+        }
+
+        violation[{&quot;msg&quot;: msg}] {
+          input.review.object.spec.hostNetwork == true
+          msg := &quot;hostNetwork est actuellement actif.&quot;
+        }
+
+        violation[{&quot;msg&quot;: msg}] {
+          input.review.object.spec.volumes[_].hostPath
+          msg := &quot;Les volumes HostPath ne sont pas autorises.&quot;
+        }</code></pre></div><div class="table-wrapper detached"><table id="-134819004#h6a3s2_234"><tr class="header-row" id="-134819004#h6a3s2_237"><th id="-134819004#h6a3s2_242"><p>Violation</p></th><th id="-134819004#h6a3s2_243"><p>Type</p></th><th id="-134819004#h6a3s2_244"><p>Rego</p></th></tr><tr class="" id="-134819004#h6a3s2_238"><td id="-134819004#h6a3s2_245"><p>readOnlyRootFilesystem != true</p></td><td id="-134819004#h6a3s2_246"><p>Syst&egrave;me de fichiers en lecture seule</p></td><td id="-134819004#h6a3s2_247"><p>violation[{&quot;msg&quot;: msg}] { input.review.object.spec.containers[_].securityContext.readOnlyRootFilesystem != true msg := &quot;Le systeme de fichier n'est pas en lecture seulement.&quot; }</p></td></tr><tr class="" id="-134819004#h6a3s2_239"><td id="-134819004#h6a3s2_248"><p>allowPrivilegeEscalation == true</p></td><td id="-134819004#h6a3s2_249"><p>Escalade de privil&egrave;ges</p></td><td id="-134819004#h6a3s2_250"><p>violation[{&quot;msg&quot;: msg}] { input.review.object.spec.containers[_].securityContext.allowPrivilegeEscalation == true msg := &quot;Attention, l'escalation de privilege est actif.&quot; }</p></td></tr><tr class="" id="-134819004#h6a3s2_240"><td id="-134819004#h6a3s2_251"><p>hostNetwork == true</p></td><td id="-134819004#h6a3s2_252"><p>Utilisation du r&eacute;seau de l'h&ocirc;te</p></td><td id="-134819004#h6a3s2_253"><p>violation[{&quot;msg&quot;: msg}] { input.review.object.spec.hostNetwork == true msg := &quot;hostNetwork est actuellement actif.&quot; }</p></td></tr><tr class="" id="-134819004#h6a3s2_241"><td id="-134819004#h6a3s2_254"><p>volumes[_].hostPath</p></td><td id="-134819004#h6a3s2_255"><p>Restriction des volumes HostPath</p></td><td id="-134819004#h6a3s2_256"><p>violation[{&quot;msg&quot;: msg}] { input.review.object.spec.volumes[_].hostPath msg := &quot;Les volumes HostPath ne sont pas autorises.&quot; }</p></td></tr></table></div></section><section class="detached"><h3 id="-134819004#constraint-application" data-toc="constraint-application#Secure-Kubernetes-using-OPA-Gatekeeper.md-constraint-application">Constraint Application</h3><div class="tldr detached" id="-134819004#h6a3s2_262"><p id="-134819004#h6a3s2_267">Commande: <span class="" id="-134819004#h6a3s2_268"><span class="keystroke-after"><kbd class="keystroke">kubectl</kbd></span><span class="keystroke-after"><kbd class="keystroke">apply</kbd></span><span class="keystroke-after"><kbd class="keystroke">-f</kbd></span><span class="keystroke-after"><kbd class="keystroke">CA_spk8s.yaml</kbd></span></span></p></div><p id="-134819004#h6a3s2_259">D&eacute;finition du fichier <span class="inline-code" id="-134819004#h6a3s2_263">CA_spk8s.yaml</span>.</p><div class="detached code-block" id="-134819004#h6a3s2_260"><pre><code class="language-yaml">apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: SPK8s
+metadata:
+  name: k8s-security-policies
+spec:
+  match:
+    kinds:
+      - apiGroups: [&quot;&quot;]
+        kinds: [&quot;Pod&quot;]</code></pre></div><blockquote class="prompt flex bordered-element-rounded note detached">
+  <svg xmlns="http://www.w3.org/2000/svg" class="prompt-icon">
+    <path d="M21 12a9 9 0 1 1-9-9 9 9 0 0 1 9 9zM10.5 7.5A1.5 1.5 0 1 0 12 6a1.5 1.5 0 0 0-1.5 1.5zm-.5 3.54v1h1V18h2v-6a.96.96 0 0 0-.96-.96z"></path>
+  </svg>
+  <div class="prompt-content prompt-content-p"><p>Il est possible de filtrer une r&egrave;gle Constraint par namespace en ajoutant dans la section <b id="-134819004#h6a3s2_264">&quot;match&quot;</b> la ligne <b id="-134819004#h6a3s2_265">&quot;namespaces: [&quot;default&quot;, &quot;production&quot;]&quot;</b> pr&eacute;sente dans l'exemple (<a href="#-134819004#exemple_a">&quot;Constraint&quot; in &quot;S&eacute;curiser Kubernetes avec OPA Gatekeeper&quot;</a>).</p></div>
+</blockquote>
+</section></section><section class="detached"><h2 id="-134819004#debug" data-toc="debug#Secure-Kubernetes-using-OPA-Gatekeeper.md-debug">Debug</h2><section class="detached"><h3 id="-134819004#error-resource-mapping-not-found" data-toc="error-resource-mapping-not-found#Secure-Kubernetes-using-OPA-Gatekeeper.md-error-resource-mapping-not-found">error: resource mapping not found</h3><div class="tldr detached" id="-134819004#h6a3s2_273"><p id="-134819004#h6a3s2_278">Commande: <span class="" id="-134819004#h6a3s2_279"><span class="keystroke-after"><kbd class="keystroke">kubectl</kbd></span><span class="keystroke-after"><kbd class="keystroke">describe</kbd></span><span class="keystroke-after"><kbd class="keystroke">ConstraintTemplate</kbd></span><span class="keystroke-after"><kbd class="keystroke">-o</kbd></span><span class="keystroke-after"><kbd class="keystroke">wide</kbd></span></span></p></div><p id="-134819004#h6a3s2_270">Lors de l'installation d'une <span class="inline-code" id="-134819004#h6a3s2_274">ConstraintTemplate</span>, celle-ci peut pr&eacute;senter des erreurs. K8s, dans son application, n'emp&ecirc;chera pas l'&eacute;xecution de la cr&eacute;ation, pour autant, lors de l'application de la <span class="inline-code" id="-134819004#h6a3s2_275">Constraint</span>, celle-ci d&eacute;clarera que le template n'existe pas.</p><div class="detached code-block" id="-134819004#h6a3s2_271"><pre><code class="language-bash">error: resource mapping not found for name: &quot;disallow-host-network-rule&quot; namespace: &quot;&quot; from &quot;ee.yaml&quot;: no matches for kind &quot;HostNetworkUsagea&quot; in version &quot;constraints.gatekeeper.sh/v1beta1&quot;
+ensure CRDs are installed first</code></pre></div><p id="-134819004#h6a3s2_272"> Il est alors possible d'utiliser la commande <span class="inline-code" id="-134819004#h6a3s2_277">kubectl describe ConstraintTemplate -o wide</span> pour obtenir des d&eacute;tails lors d'erreurs dans la cr&eacute;ation des Constraints et corriger celle-ci.</p></section></section></article></div></section></div></body></html>
