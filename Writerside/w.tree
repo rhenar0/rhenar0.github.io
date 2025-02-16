@@ -8,5 +8,6 @@
 
     <toc-element topic="acceuil.md">
         <toc-element topic="Secure-Kubernetes-using-OPA-Gatekeeper.md"/>
+        <toc-element topic="Rapport-VM-Reverse.md"/>
     </toc-element>
 </instance-profile>
