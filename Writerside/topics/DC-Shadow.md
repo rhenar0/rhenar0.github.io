@@ -24,11 +24,9 @@ Ils présentent qu'avant leurs travaux, la persistence était déjà présente m
 Introduire un faux contrôleur de domaine pour modifier des objets ou effacer des traces.
 
 ### Pourquoi ?
-<li>
-    <li>Utilise les protocoles natifs de réplication d’AD</li>
-    <li>Permet de mettre en place des persistances intéressante</li>
-    <li>Aucun logging</li>
-</li>
+- Utilise les protocoles natifs de réplication d’AD
+- Permet de mettre en place des persistances intéressante
+- Aucun logging
 
 <note>
     <p> 
